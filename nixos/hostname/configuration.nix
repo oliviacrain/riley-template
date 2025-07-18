@@ -8,10 +8,12 @@
 let
   hostname = "hostname";
   username = "riley";
-  hashed_pass = "put hashed pass here"; # mkpasswd can do this for you
   ssh_pubkey = "put key here";
 in {
-  imports = [inputs.asahi.nixosModules.apple-silicon-support];
+  imports = [
+    inputs.asahi.nixosModules.apple-silicon-support
+    ./hardware-configuration.nix
+  ];
 
   # Don't change
   system.stateVersion = "25.05";
