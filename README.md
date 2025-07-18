@@ -4,8 +4,8 @@ You'll want to clone this and change the following:
 - the string "hostname" on the last line of `nixos/default.nix`
 - replace `nixos/hostname/hardware-configuration.nix` with the one you've already generated
 
-You can test-build the system with `nix --extra-experimental-features "nix-command flakes" build .#nixosConfigurations.<your hostname>.config.system.build.top-level`
+You can test-build the system with `nix --extra-experimental-features "nix-command flakes" --impure build .#nixosConfigurations.<your hostname>.config.system.build.top-level`
 
-You can switch nixos configs using `nixos-rebuild --flake <path to this repo>#<your hostname>`
+You can switch nixos configs using `nixos-rebuild --impure --flake <path to this repo>#<your hostname>`
 
 You can update the pinned nixpkgs revision with `nix flake update` once you get things going.
