@@ -6,6 +6,6 @@ You'll want to clone this and change the following:
 
 You can test-build the system with `nix --extra-experimental-features "nix-command flakes" --impure build .#nixosConfigurations.<your hostname>.config.system.build.top-level`
 
-You can switch nixos configs using `nixos-rebuild --impure --flake <path to this repo>#<your hostname>`
+You can switch nixos configs by rebooting after using `nixos-rebuild boot --impure --flake <path to this repo>#<your hostname>`
 
 You can update the pinned nixpkgs revision with `nix flake update` once you get things going.
